@@ -1,7 +1,5 @@
 #Lab 6 - Connect 4
 
-player_1 = "Player 1: x"
-player_2 = "Player 2: o"
 def initialize_board(num_rows, num_cols): #Initialize Board
     board = []
     for i in range(num_rows):
@@ -52,17 +50,15 @@ def game(): #Connect 4 Game
     board = initialize_board(columns, rows)
     print_board(board)
     player_chip=["x", "o"]
-    print(player_1)
-    print(player_2)
     turn=0
     total_moves=0
     moves=columns*rows
 
-    while True:
+    while total_moves<moves:
         print(f"Player {turn+1}: Which column would you like to choose?")
         col=int(input())
 
-        while col<0 or columns <= col:
+        while col<0 or col>=columns:
             print("Invalid column. Please try again.")
             col=int(input())
 
@@ -73,13 +69,10 @@ def game(): #Connect 4 Game
             continue
         print_board(board)
 
-        if check_if_winner(board, col, row, player_1[turn]):
+        if check_if_winner(board, col, row, player_chip[turn]):
             print(f"Player 1 won the game!")
             return
 
-        if check_if_winner(board, col, row, player_2[turn]):
-            print(f"Player 2 won the game!")
-            return
         turn=1-turn
         total_moves+=1
     print("Draw. Nobody wins.")
