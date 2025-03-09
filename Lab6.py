@@ -45,8 +45,8 @@ def check_if_winner(board, col, row, chip_type):
     return False
 
 def game(): #Connect 4 Game
-    columns = int(input("What would you like the height of the board to be?: "))
-    rows = int(input("What would you like the length of the board to be?: "))
+    columns = int(input("What would you like the height of the board to be? "))
+    rows = int(input("What would you like the length of the board to be? "))
     board = initialize_board(rows, columns)
     print_board(board)
     player_chip=["x", "o"]
@@ -55,8 +55,7 @@ def game(): #Connect 4 Game
     moves=columns*rows
 
     while total_moves<moves:
-        print(f"Player {turn+1}: Which column would you like to choose?")
-        col=int(input())
+        print(f"Player {turn+1}:")
 
         while col<0 or col>=columns:
             print("Invalid column. Please try again.")
