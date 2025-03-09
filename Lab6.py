@@ -47,7 +47,7 @@ def check_if_winner(board, col, row, chip_type):
 def game(): #Connect 4 Game
     columns = int(input("What would you like the height of the board to be?: "))
     rows = int(input("What would you like the length of the board to be?: "))
-    board = initialize_board(columns, rows)
+    board = initialize_board(rows, columns)
     print_board(board)
     player_chip=["x", "o"]
     turn=0
