@@ -56,6 +56,7 @@ def game(): #Connect 4 Game
 
     while total_moves<moves:
         print(f"Player {turn+1}:")
+        col=int(input())
 
         while col<0 or col>=columns:
             print("Invalid column. Please try again.")
