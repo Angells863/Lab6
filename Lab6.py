@@ -75,7 +75,10 @@ def game(): #Connect 4 Game
 
         turn=1-turn
         total_moves+=1
-    print("Draw. Nobody wins.")
+
+        if total_moves==moves:
+            print("Draw. Nobody wins.")
+            return
 
 if __name__ == "__main__":
     game()
