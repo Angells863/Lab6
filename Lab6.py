@@ -70,7 +70,7 @@ def game(): #Connect 4 Game
         print_board(board)
 
         if check_if_winner(board, col, row, player_chip[turn]):
-            print(f"Player 1 won the game!")
+            print(f"Player {turn+1} won the game!")
             return
 
         turn=1-turn
